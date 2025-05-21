@@ -1,0 +1,21 @@
+vote system
+sortby
+some ui
+some filename
+
+
+
+---------------------------------------
+
+
+edit modal 
+edit status . edited . true / false > question
+
+---------------------------------------
+
+staff 
+
+edit modal 
+
+answer modal ui
+auto focus

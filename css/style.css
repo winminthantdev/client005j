@@ -1,0 +1,18 @@
+*{
+    box-sizing: border-box;
+}
+
+
+.voteds{
+    color: blue;
+}
+
+@keyframes flashProgress {
+    from {
+      width: 100%;
+    }
+    to {
+      width: 0%;
+    }
+  }
+  

@@ -1,0 +1,43 @@
+[
+    {
+      "username": "STUDENT1",
+      "password": "123456",
+      "role": "student"
+    },
+    {
+      "username": "STUDENT2",
+      "password": "123456",
+      "role": "student"
+    },
+    {
+      "username": "STUDENT3",
+      "password": "123456",
+      "role": "student"
+    },
+    {
+      "username": "STUDENT4",
+      "password": "123456",
+      "role": "student"
+    },
+    {
+      "username": "STUDENT5",
+      "password": "123456",
+      "role": "student"
+    },
+    {
+      "username": "CSMSTAFF1",
+      "password": "123456",
+      "role": "staff"
+    },
+    {
+      "username": "CSMSTAFF2",
+      "password": "123456",
+      "role": "staff"
+    },
+    {
+      "username": "CSMSTAFF3",
+      "password": "123456",
+      "role": "staff"
+    }
+  ]
+

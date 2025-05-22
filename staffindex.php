@@ -108,70 +108,79 @@ if (!isset($_SESSION["user"])) {
   </div>
   <!-- End Main Section -->
 
- <!-- Modal box for adding a module -->
-<div id="addmodulemodal" class="fixed inset-0 flex justify-center items-center bg-gray-900 bg-opacity-50 hidden">
-  <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md relative">
-    <button id="closeModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">
-      <i class="fa-solid fa-times"></i>
-    </button>
-    <h3 class="text-lg font-semibold mb-4">Add Module</h3>    
-    <form id="addmoduleForm" action="" method="POST">
-      <div class="mb-4">
-        <label for="modulename" class="block text-sm font-medium text-gray-700">Module Name</label>
-        <input type="text" name="modulename" id="modulename" placeholder="Enter module name"
-          class="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
-      </div>
-      <button type="submit" class="w-full bg-green-500 text-white p-2 rounded-md hover:bg-green-600">
-        Add
-      </button>
-    </form>
-  </div>
-</div>
 
-
- <!-- Modal box for adding a module -->
- <div id="answerModal" class="fixed inset-0 flex justify-center items-center bg-gray-900 bg-opacity-50 hidden">
-  <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md relative">
-    <button id="closeanswerModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">
-      <i class="fa-solid fa-times"></i>
+<!-- Answer Modal -->
+<div id="answerModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 hidden">
+  <div class="bg-white w-full max-w-md rounded-2xl shadow-lg p-6 relative animate-fadeIn">
+    <button id="closeanswerModal" class="absolute top-3 right-3 text-gray-400 hover:text-red-500">
+      <i class="fa-solid fa-xmark text-lg"></i>
     </button>
-    <h3 class="text-lg font-semibold mb-4">Anwer Qeustion</h3>    
-    <form id="answerForm" action="" method="POST">
-      <div class="mb-4">
-        <label for="answer" class="block text-sm font-medium text-gray-700">Answer</label>
-        <input type="text" name="answer" id="answer" placeholder="Reply question"
-          class="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
+    <h2 class="text-xl font-semibold text-green-600 mb-4">Answer Question</h2>
+    <form id="answerForm" method="POST">
+      <div class="space-y-4">
+        <div>
+          <label for="answer" class="block text-sm font-medium text-gray-700">Your Answer</label>
+          <textarea name="answer" id="answer" rows="4" placeholder="Write your reply here..."
+            class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none resize-none"></textarea>
+        </div>
+        <button type="submit" id="submitAnswerBtn"
+          class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg transition">
+          Submit Answer
+        </button>
       </div>
-      <button type="submit" id="submitAnswerBtn" class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">
-        Reply
-      </button>
     </form>
   </div>
 </div>
 
 
 
-<!-- Start Modal box for edit -->
-<div id="addeditanswermodal" class="fixed inset-0 flex justify-center items-center bg-gray-900 bg-opacity-50 hidden">
-  <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md relative">
-    <button id="closeeditmodal" class="absolute top-1 right-2 text-3xl text-gray-500 hover:text-red-700">
+<!-- Add Module Modal -->
+<div id="addmodulemodal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 hidden">
+  <div class="bg-white w-full max-w-md rounded-2xl shadow-lg p-6 relative animate-fadeIn">
+    <button id="closeModal" class="absolute top-3 right-3 text-gray-400 hover:text-red-500">
+      <i class="fa-solid fa-xmark text-lg"></i>
+    </button>
+    <h2 class="text-xl font-semibold text-green-600 mb-4">Add New Module</h2>
+    <form id="addmoduleForm" method="POST">
+      <div class="space-y-4">
+        <div>
+          <label for="modulename" class="block text-sm font-medium text-gray-700">Module Name</label>
+          <input type="text" name="modulename" id="modulename" placeholder="Enter module name"
+            class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none" />
+        </div>
+        <button type="submit"
+          class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg transition">
+          Add Module
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<!-- Edit Answer Modal -->
+<div id="addeditanswermodal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 hidden">
+  <div class="bg-white w-full max-w-md rounded-2xl shadow-lg p-6 relative animate-fadeIn">
+    <button id="closeeditmodal" class="absolute top-3 right-3 text-gray-400 hover:text-red-600 text-2xl leading-none">
       &times;
     </button>
-    <h3 class="text-lg font-semibold mb-4">Answer Qusetion</h3>    
-    <form id="editaskquestionForm" action="" method="POST">
-      <div class="mb-4">
-        <label for="editanswer" class="block text-sm font-medium text-gray-700">Answer</label>
-        <input type="text" name="editanswer" id="editanswer" placeholder="Edit Answer"
-          class="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500" value="" />
-        <input type="hidden" id="editanswerid" name="editanswerid" />
+    <h2 class="text-xl font-bold text-green-600 mb-4">Edit Your Answer</h2>
+    <form id="editanswerform" method="POST">
+      <div class="space-y-4">
+        <div>
+          <label for="editanswer" class="block text-sm font-medium text-gray-700">Answer</label>
+          <textarea name="editanswer" id="editanswer" rows="4" placeholder="Update your answer here..."
+            class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none resize-none"></textarea>
+          <input type="hidden" id="editanswerid" name="editanswerid" />
+        </div>
+        <button type="submit" id="submiteditAnswerBtn"
+          class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition">
+          Update Answer
+        </button>
       </div>
-      <button type="submit" id="" class="w-full bg-green-600 text-white p-2 rounded-md hover:bg-green-700">
-        Update
-      </button>
     </form>
   </div>
 </div>
-<!-- End Modal box for edit -->
 
 
   <!-- jquery js 1 -->

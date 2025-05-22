@@ -18,5 +18,10 @@
         "code": "6555COMP",
         "name": "Advanced AI",
         "tutor": "CSMSTAFF2"
+    },
+    {
+        "code": "module682dfda580e32",
+        "name": "Airtable Automation",
+        "tutor": "CSMSTAFF1"
     }
 ]

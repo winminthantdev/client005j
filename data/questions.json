@@ -9,6 +9,40 @@
             {
                 "staff": "CSMSTAFF1",
                 "answer": "Hey , what'up?"
+            },
+            {
+                "staff": "CSMSTAFF1",
+                "answer": "\u101b\u1010\u101a\u103a \u101f"
+            },
+            {
+                "id": "answer682de9c07fa76",
+                "staff": "CSMSTAFF1",
+                "answer": "Je",
+                "editStatus": "Edited"
+            },
+            {
+                "id": "answer682df0c9847de",
+                "staff": "CSMSTAFF1",
+                "answer": "Ok",
+                "editStatus": ""
+            },
+            {
+                "id": "answer682df4707f990",
+                "staff": "CSMSTAFF1",
+                "answer": "Hey , what'up?",
+                "editStatus": ""
+            },
+            {
+                "id": "ans_682dfdb92bb34",
+                "staff": "CSMSTAFF1",
+                "answer": "weerghh",
+                "editStatus": "Edited"
+            },
+            {
+                "id": "ans_682f26359163a",
+                "staff": "CSMSTAFF1",
+                "answer": "terhey",
+                "editStatus": "Edited"
             }
         ],
         "editStatus": "Edited",
@@ -35,8 +69,16 @@
         "username": "STUDENT5",
         "question": "ehw3h34ii4i43wiy3ot iowii3w4wiojw3io4j44j3",
         "likes": 0,
-        "answers": [],
-        "editStatus": "Edited"
+        "answers": [
+            {
+                "id": "ans_682f26e2831a7",
+                "staff": "CSMSTAFF1",
+                "answer": "\u1021\u1031\u1038\u1006\u1031\u1038\u1015\u102b",
+                "editStatus": "Edited"
+            }
+        ],
+        "editStatus": "Edited",
+        "status": "answered"
     },
     {
         "id": "question6829e727e1344",
@@ -92,8 +134,14 @@
         "username": "STUDENT5",
         "question": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#039;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of  .",
         "likes": 1,
-        "answers": [],
-        "editStatus": "Edited"
+        "answers": [
+            {
+                "staff": "CSMSTAFF1",
+                "answer": "ok"
+            }
+        ],
+        "editStatus": "Edited",
+        "status": "answered"
     },
     {
         "id": "question682c8fffb120a",
@@ -101,7 +149,39 @@
         "username": "STUDENT5",
         "question": "hi",
         "likes": 0,
-        "answers": []
+        "answers": [
+            {
+                "id": "answer682df627df376",
+                "staff": "CSMSTAFF1",
+                "answer": "we4h",
+                "editStatus": "Edited"
+            },
+            {
+                "id": "ans_682df8231fb22",
+                "staff": "CSMSTAFF1",
+                "answer": "egreerrhh",
+                "editStatus": "Edited"
+            },
+            {
+                "id": "ans_682df8f274c45",
+                "staff": "CSMSTAFF1",
+                "answer": "errth",
+                "editStatus": ""
+            },
+            {
+                "id": "ans_682df9db3f1ff",
+                "staff": "CSMSTAFF1",
+                "answer": "wegeh",
+                "editStatus": ""
+            },
+            {
+                "id": "ans_682dfa9076797",
+                "staff": "CSMSTAFF1",
+                "answer": "erh",
+                "editStatus": ""
+            }
+        ],
+        "status": "answered"
     },
     {
         "id": "question682c9fe1cc8cb",

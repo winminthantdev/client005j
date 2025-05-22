@@ -113,7 +113,7 @@ if (!isset($_SESSION["user"])) {
       <div class="mb-4">
         <label for="askquestion" class="block text-sm font-medium text-gray-700">Qusetion</label>
         <input type="text" name="askquestion" id="askquestion" placeholder="Ask question"
-          class="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
+          class="w-full mt-1 p-2 border rounded-md focus:ring-green-500 focus:border-green-500 focus:outline-none" />
       </div>
       <button type="submit" id="" class="w-full bg-green-600 text-white p-2 rounded-md hover:bg-green-700">
         Submit Question
@@ -134,7 +134,7 @@ if (!isset($_SESSION["user"])) {
       <div class="mb-4">
         <label for="editaskquestion" class="block text-sm font-medium text-gray-700">Qusetion</label>
         <input type="text" name="editaskquestion" id="editaskquestion" placeholder="Edit question"
-          class="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500" value="" />
+          class="w-full mt-1 p-2 border rounded-md focus:ring-green-500 focus:border-green-500 focus:outline-none" value="" />
         <input type="hidden" id="editquestionid" name="editquestionid" />
       </div>
       <button type="submit" id="" class="w-full bg-green-600 text-white p-2 rounded-md hover:bg-green-700">

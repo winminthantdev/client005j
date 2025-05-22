@@ -394,8 +394,8 @@ $(document).ready(function () {
      $("#addeditquestionmodal").removeClass("hidden");
 
      setTimeout(() => {
-  $("#editaskquestion").focus().select();
-}, 100);
+        $("#editaskquestion").focus().select();
+      }, 100);
 
    })
 

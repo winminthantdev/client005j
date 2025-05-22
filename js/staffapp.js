@@ -169,17 +169,18 @@ $(document).ready(function () {
                     <div class="flex-1">
                       <div class="flex justify-between items-start">
                         <span class="text-sm font-semibold text-gray-800">${answer.staff}</span>
+                        <span class="text-xs text-gray-400">${answer.editStatus || ""}</span>
+                      </div>
+                      <p class="text-gray-700 mt-1">${answer.answer}</p>
                         ${answer.staff === sessionUsername ? `
                           <button 
-                            class="editBtn flex items-center gap-1 text-sm text-gray-500 hover:text-yellow-600 transition"
-                            data-question="${question.question}" 
-                            data-id="${question.id}">
+                            class="editBtn flex items-center gap-1 text-sm text-gray-500 hover:text-yellow-600 transition mt-3"
+                            data-answer="${answer.answer}"
+                            data-id="${answer.id}">
                             <i class="fa-solid fa-pen"></i>
                             <span>Edit</span>
                           </button>` : ''
                         }
-                      </div>
-                      <p class="text-gray-700 mt-1">${answer.answer}</p>
                     </div>
                   </div>
                 `).join('')}
@@ -209,13 +210,15 @@ $(document).ready(function () {
 
 
    // Show Edit modal
-   $(document).on("click","#editBtn", function(){
-    $("#editanswer").val($(this).data("question"));
+   $(document).on("click",".editBtn", function(){
+    const questionId = $(this).data("question-id");
+    $("#submiteditAnswerBtn").data("question-id", questionId);
+    $("#editanswer").val($(this).data("answer"));
     $("#editanswerid").val($(this).data("id"));
     $("#addeditanswermodal").removeClass("hidden");
 
     setTimeout(() => {
-    $("#addeditanswermodal").focus().select();
+    $("#editanswer").focus().select();
     }, 100);
 
   })
@@ -238,6 +241,9 @@ $(document).ready(function () {
     // Show modal
     $("#addmodule").click(function () {
       $("#addmodulemodal").removeClass("hidden");
+      setTimeout(() => {
+        $("#modulename").focus().select();
+      }, 100);
     });
   
     // Hide modal when clicking close button
@@ -299,6 +305,10 @@ $(document).ready(function () {
     let questionId = $(this).data("question-id");
     $("#submitAnswerBtn").data("question-id", questionId);
     $("#answerModal").removeClass("hidden");
+
+    setTimeout(() => {
+      $("#answer").focus().select();
+      }, 100);
   });
 
   // Hide Answer Modal
@@ -361,5 +371,45 @@ $(document).ready(function () {
     });
 }
 
+
+  $("#editanswerform").on("submit", function (event) {
+    event.preventDefault();
+
+    // const questionId = $("#submiteditAnswerBtn").data("question-id");
+    const editanswer = $("#editanswer").val().trim();
+    const answerId = $("#editanswerid").val().trim();
+
+    if (editanswer !== "") {      
+      submiteditAnswer( editanswer, answerId);
+    } else {
+      flashMessage("Please write an answer before submitting.","error");
+    }
+  });
+
+
+function submiteditAnswer( editanswer, answerId) {
+    
+  let moduleCode = currentModuleId.split("-")[1];
+
+  $.ajax({
+    url: "app/answerquestion.php",
+    method: "POST",
+    data: { editanswer: editanswer, answerId : answerId },
+    success: function (response) {
+      try {
+        response = JSON.parse(response);
+      } catch (e) {
+        console.error("Error parsing JSON:", e);
+      }
+      flashMessage(response.message,response.success);
+      $("#editanswer").val("");
+      $("#addeditanswermodal").addClass("hidden");
+      loadQuestions(moduleCode);
+    },
+    error: function () {
+      flashMessage("Error submitting question.",error);
+    },
+  });
+}
 
 });
